@@ -12,6 +12,7 @@ import os
 
 import numpy as np
 import cv2
+import dvc.api
 from keras import layers, Sequential, utils
 from keras.models import Model
 from dvclive import Live
@@ -104,7 +105,9 @@ def main():
     Main function to load data, build the model, train, and evaluate.
     """
     with Live() as live:
-        percentage = 10
+
+        params = dvc.api.params_show()
+        percentage = params['ds_percentage']
 
         # Load and preprocess data
         print('Loading', percentage ,'% of the training data...')
@@ -141,6 +144,8 @@ def main():
         score = model.evaluate(x_test, y_test, verbose=0)
         print("Test loss:", score[0])
         print("Test accuracy:", score[1])
+        live.log_metric(f"test_loss", score[0], plot=False)
+        live.log_metric(f"test_acc", score[1], plot=False)
 
         model.save("mnist.keras")
         live.log_artifact("mnist.keras", name="mnist.keras")
