@@ -132,7 +132,7 @@ def main():
             epochs=EPOCHS, 
             validation_split=0.3, 
             verbose=1,
-            callbacks=[DVCLiveCallback(live, log_dir="dvclive")],
+            callbacks=[DVCLiveCallback(live)],
         )
         print('Training phase is done!')
 
