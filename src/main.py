@@ -148,7 +148,7 @@ def main():
         live.log_metric(f"test_acc", score[1], plot=False)
 
         model.save("mnist.keras")
-        live.log_artifact("mnist.keras", name="mnist.keras")
+        live.log_artifact("mnist.keras", name="model")
 
 
 
