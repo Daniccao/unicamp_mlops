@@ -2,5 +2,8 @@ stages:
   train:
     cmd: python src/main.py
     deps:
-      - data
-      - src/main.py
+    - data
+    - src/main.py
+plots:
+- dvclive/plots/metrics:
+    x: step
