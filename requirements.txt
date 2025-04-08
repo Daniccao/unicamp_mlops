@@ -1,2 +1,6 @@
 dvc==3.59.1
 dvc-gdrive==3.0.1
+tensorflow==2.19.0
+keras==3.9.2
+opencv-python==4.11.0.86
+dvclive==3.48.2
