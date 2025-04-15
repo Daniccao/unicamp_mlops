@@ -26,7 +26,6 @@ INPUT_SHAPE = (28, 28, 1)
 NUM_CLASSES = 10
 BATCH_SIZE = 128
 EPOCHS = 15
-# EPOCHS = 10
 
 
 def load_data(folder, percentage=100):
