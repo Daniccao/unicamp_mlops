@@ -1,5 +1,4 @@
 /data
 .DS_Store
 mnist.keras
-mnist.keras.dvc
 dvclive/
